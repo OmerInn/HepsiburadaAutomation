@@ -64,6 +64,7 @@ public class Test_Add_Product_To_Card extends BaseTest{
         productsPage.selectTshirtProduct(2);
         Assertions.assertTrue(productsDetailPage.isOnProductTshirtDetailPage(),"Not on product detail page!");
         productsDetailPage.addToCard();
+        productsDetailPage.closeToProduct();
         homePage.goToCard();
     }
     @Test
