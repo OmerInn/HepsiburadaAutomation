@@ -34,5 +34,15 @@ public class BasePage {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+    public void clickAndWaitForElementToBeVisible(By locator) {
+        WebElement element = waitForElementToBeVisible(locator);
+        element.click();
+    }
+
+    public void sendKeysAndWaitForElementToBeVisible(By locator, CharSequence... keysToSend) {
+        WebElement element = waitForElementToBeVisible(locator);
+        element.sendKeys(keysToSend);
+    }
+
 
 }

@@ -21,8 +21,8 @@ public class Test_Add_Product_To_Card extends BaseTest{
         homePage.click(homePage.searchBox().searchRatherClick);
         homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation);
         productsPage = new ProductsPage(driver);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys("Cep telefonu");
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys(Keys.ENTER);
+        homePage.sendKeysAndWaitForElementToBeVisible(homePage.searchBox().searchLocation,"Cep Telefonu");
+        homePage.sendKeysAndWaitForElementToBeVisible(homePage.searchBox().searchLocation,Keys.ENTER);
         Assertions.assertTrue(productsPage.isOnPhoneProductPage() ,
                 "Not on products page!");
     }
@@ -52,11 +52,11 @@ public class Test_Add_Product_To_Card extends BaseTest{
     @Order(5)
     public void searchForTshirtProduct(){
         homePage.click(homePage.searchBox().hepsiBuradaLogo);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchRatherClick).click();
+        homePage.clickAndWaitForElementToBeVisible(homePage.searchBox().searchRatherClick);
         homePage.click(homePage.searchBox().searchRatherClick);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys("Tshirt");
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys(Keys.ENTER);
+        homePage.clickAndWaitForElementToBeVisible(homePage.searchBox().searchLocation);
+        homePage.sendKeysAndWaitForElementToBeVisible(homePage.searchBox().searchLocation,"Tshirt");
+        homePage.sendKeysAndWaitForElementToBeVisible(homePage.searchBox().searchLocation,Keys.ENTER);
     }
     @Test
     @Order(6)
