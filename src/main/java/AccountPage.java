@@ -27,7 +27,7 @@ public class AccountPage extends BasePage{
         waitForElementToBeVisible(userLogin).sendKeys("asdasdasd123@gmail.com");
         waitForElementToBeVisible(loginBtn).click();
         waitForElementToBeVisible(userPassword).click();
-        waitForElementToBeVisible(userPassword).sendKeys("canakkale1717");
+        waitForElementToBeVisible(userPassword).sendKeys("hepsiburada1818");
 
     }
     public boolean isOnAccountPageDisplay(){

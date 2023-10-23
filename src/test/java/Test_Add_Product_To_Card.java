@@ -54,7 +54,6 @@ public class Test_Add_Product_To_Card extends BaseTest{
         homePage.click(homePage.searchBox().hepsiBuradaLogo);
         homePage.clickAndWaitForElementToBeVisible(homePage.searchBox().searchRatherClick);
         homePage.click(homePage.searchBox().searchRatherClick);
-        homePage.clickAndWaitForElementToBeVisible(homePage.searchBox().searchLocation);
         homePage.sendKeysAndWaitForElementToBeVisible(homePage.searchBox().searchLocation,"Tshirt");
         homePage.sendKeysAndWaitForElementToBeVisible(homePage.searchBox().searchLocation,Keys.ENTER);
     }
