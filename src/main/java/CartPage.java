@@ -15,8 +15,8 @@ public class CartPage extends BasePage{
         super(driver);
     }
 
-    public boolean isProductAdded(Duration timeoutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+    public boolean isProductAdded( ) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         List<WebElement> productsInCart = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(productNameLocator));
         return !productsInCart.isEmpty();
     }

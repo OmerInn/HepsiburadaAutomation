@@ -14,28 +14,28 @@ public class Test_Add_Product_To_Card extends BaseTest{
 
     @Test
     @Order(1)
-    public void search_a_Product(){
+    public void searchForPhoneProduct(){
         driver.get("https://www.hepsiburada.com/");
         homePage = new HomePage(driver);
         homePage.acceptCookies();
         homePage.click(homePage.searchBox().searchRatherClick);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation,Duration.ofSeconds(5));
+        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation);
         productsPage = new ProductsPage(driver);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation,Duration.ofSeconds(5)).sendKeys("Cep telefonu");
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation, Duration.ofSeconds(5)).sendKeys(Keys.ENTER);
+        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys("Cep telefonu");
+        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys(Keys.ENTER);
         Assertions.assertTrue(productsPage.isOnPhoneProductPage() ,
                 "Not on products page!");
     }
     @Test
     @Order(2)
-    public void select_phone_a_product(){
+    public void selectPhoneProduct(){
         productsDetailPage = new ProductsDetailPage(driver);
         productsPage.selectProduct(2);
         Assertions.assertTrue(productsDetailPage.isOnProductPhoneDetailPage(),"Not on product detail page!");
     }
     @Test
     @Order(3)
-    public void add_phone_product_to_cart(){
+    public void addPhoneToBasket(){
         productsDetailPage.addToCard();
         Assertions.assertTrue(homePage.addProductToCart(),
                 "Product could not be added to basket");
@@ -43,24 +43,24 @@ public class Test_Add_Product_To_Card extends BaseTest{
     }
     @Test
     @Order(4)
-    public void go_to_cart(){
+    public void goToCard(){
         homePage.goToCard();
-        Assertions.assertTrue(homePage.cartPage().isProductAdded(Duration.ofSeconds(10)) ,
+        Assertions.assertTrue(homePage.cartPage().isProductAdded() ,
                 "Product was not added to cart!");
     }
     @Test
     @Order(5)
-    public void go_to_tshirt(){
+    public void searchForTshirtProduct(){
         homePage.click(homePage.searchBox().hepsiBuradaLogo);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchRatherClick,Duration.ofSeconds(5)).click();
+        homePage.waitForElementToBeVisible(homePage.searchBox().searchRatherClick).click();
         homePage.click(homePage.searchBox().searchRatherClick);
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation,Duration.ofSeconds(5));
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation,Duration.ofSeconds(5)).sendKeys("Tshirt");
-        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation, Duration.ofSeconds(5)).sendKeys(Keys.ENTER);
+        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation);
+        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys("Tshirt");
+        homePage.waitForElementToBeVisible(homePage.searchBox().searchLocation).sendKeys(Keys.ENTER);
     }
     @Test
     @Order(6)
-    public void select_tshirt_a_product(){
+    public void selectTshirtProduct(){
         productsPage.selectTshirtProduct(2);
         Assertions.assertTrue(productsDetailPage.isOnProductTshirtDetailPage(),"Not on product detail page!");
         productsDetailPage.addToCard();
@@ -69,7 +69,7 @@ public class Test_Add_Product_To_Card extends BaseTest{
     }
     @Test
     @Order(7)
-    public void go_to_myAccount(){
+    public void goToMyAccount(){
         homePage.accountPage().goToMyAccount();
         homePage.accountPage().loginInfo();
         Assertions.assertTrue(homePage.accountPage().isOnAccountPageDisplay(),"Not on account page!");

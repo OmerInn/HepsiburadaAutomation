@@ -19,15 +19,15 @@ public class AccountPage extends BasePage{
         super(driver);
     }
     public void goToMyAccount(){
-        waitForElementToBeVisible(myAccountBtn, Duration.ofSeconds(5)).click();
-        waitForElementToBeVisible(myAccountLogInBtn,Duration.ofSeconds(5)).click();
+        waitForElementToBeVisible(myAccountBtn).click();
+        waitForElementToBeVisible(myAccountLogInBtn).click();
         newTab();
     }
     public void loginInfo(){
-        waitForElementToBeVisible(userLogin,Duration.ofSeconds(5)).sendKeys("asdasdasd123@gmail.com");
-        waitForElementToBeVisible(loginBtn,Duration.ofSeconds(5)).click();
-        waitForElementToBeVisible(userPassword,Duration.ofSeconds(5)).click();
-        waitForElementToBeVisible(userPassword,Duration.ofSeconds(5)).sendKeys("canakkale1717");
+        waitForElementToBeVisible(userLogin).sendKeys("asdasdasd123@gmail.com");
+        waitForElementToBeVisible(loginBtn).click();
+        waitForElementToBeVisible(userPassword).click();
+        waitForElementToBeVisible(userPassword).sendKeys("canakkale1717");
 
     }
     public boolean isOnAccountPageDisplay(){

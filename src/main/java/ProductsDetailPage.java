@@ -26,9 +26,9 @@ public class ProductsDetailPage extends BasePage{
         return isDisplayed(isOnProductTshirtDetailPage);
     }
     public void addToCard() {
-        waitForElementToBeVisible(addToCartButton,Duration.ofSeconds(5)).click();
+        waitForElementToBeVisible(addToCartButton).click();
     }
     public void closeToProduct(){
-      waitForElementToBeVisible(closeProductButtonLocator,Duration.ofSeconds(15)).click();
+      waitForElementToBeVisible(closeProductButtonLocator).click();
     }
 }

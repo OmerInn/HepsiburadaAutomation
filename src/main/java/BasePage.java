@@ -30,8 +30,8 @@ public class BasePage {
     public Boolean isDisplayed(By locator){
         return find(locator).isDisplayed();
     }
-    public WebElement waitForElementToBeVisible(By locator,Duration timeoutInSeconds){
-        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+    public WebElement waitForElementToBeVisible(By locator){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
